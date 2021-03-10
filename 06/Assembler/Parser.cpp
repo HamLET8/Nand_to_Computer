@@ -9,7 +9,7 @@ the instruction is blank when first char is white space
 
 */	
 
-Parser::Parser(std::ifstream &is) : crrCom(0) 
+Parser::Parser(ifstream &is) : crrCom(0) 
 {
 	file.push_back("Zero line");
 	

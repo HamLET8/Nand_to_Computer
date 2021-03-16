@@ -1,0 +1,66 @@
+class Game{
+	field Sheep sheep;
+	field int direction;
+	
+	constructor Game new()
+	{
+		var String rule;
+		let rule = String.new("Q : Sand     W : Fence    E : Wall  ESC : quite"); 
+		do Output.moveCursor(0,20);
+		do Output.printString(rule);
+		
+		let sheep = Sheep.new();
+		let direction = 0;
+		return this;
+	}
+	
+
+	
+	method void dispose()
+	{
+		do Memory.deAlloc(this);
+		return ;
+	}
+	
+	method void moveSquare()
+	{
+      if (direction = 1) { do sheep.moveUp(); }
+      if (direction = 2) { do sheep.moveDown(); }
+      if (direction = 3) { do sheep.moveLeft(); }
+      if (direction = 4) { do sheep.moveRight(); }
+      do Sys.wait(5);  // delays the next movement
+      return;
+   }
+	
+	
+	method void run()
+	{
+		var char key;
+		while(~(key=27))
+		{
+			
+			while(key=0)
+			{
+				let key = Keyboard.keyPressed();	
+			}
+
+		    if (key = 81)  { do sheep.drawBomb(); } // x draw Bomb
+		    if (key = 87)  { do sheep.drawFence(); } // x draw fence
+		    if (key = 69)  { do sheep.drawWall(); } // x draw wall
+		    
+		    if (key = 131) { let direction = 1;  do moveSquare();}   // up arrow
+		    if (key = 133) { let direction = 2;  do moveSquare();}   // down arrow
+		    if (key = 130) { let direction = 3;  do moveSquare();}   // left arrow
+		    if (key = 132) { let direction = 4;  do moveSquare();}   // right arrow  
+  
+			
+		while (~(key = 0)) 
+		{
+           		 let key = Keyboard.keyPressed();
+         		}
+		
+	}
+		return ;	
+	}
+	
+}

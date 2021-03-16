@@ -1,0 +1,641 @@
+function Sheep.new 0
+push constant 3
+call Memory.alloc 1
+pop pointer 0
+push constant 0
+pop this 2
+push constant 512
+pop this 1
+push pointer 0
+return
+function Sheep.dispose 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return
+function Sheep.moveUp 0
+push argument 0
+pop pointer 0
+push this 1
+push constant 1024
+lt
+not
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push pointer 0
+call Sheep.clearSheep 1
+pop temp 0
+push this 1
+push constant 512
+sub
+pop this 1
+label IF_FALSE0
+push pointer 0
+call Sheep.drawSheep 1
+pop temp 0
+push constant 0
+return
+function Sheep.moveDown 0
+push argument 0
+pop pointer 0
+push this 1
+push constant 24064
+gt
+not
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push pointer 0
+call Sheep.clearSheep 1
+pop temp 0
+push this 1
+push constant 512
+add
+pop this 1
+label IF_FALSE0
+push pointer 0
+call Sheep.drawSheep 1
+pop temp 0
+push constant 0
+return
+function Sheep.moveLeft 0
+push argument 0
+pop pointer 0
+push this 1
+push constant 0
+eq
+not
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push pointer 0
+call Sheep.clearSheep 1
+pop temp 0
+push this 1
+push constant 1
+sub
+pop this 1
+label IF_FALSE0
+push pointer 0
+call Sheep.drawSheep 1
+pop temp 0
+push constant 0
+return
+function Sheep.moveRight 0
+push argument 0
+pop pointer 0
+push this 1
+push constant 24754
+gt
+not
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push pointer 0
+call Sheep.clearSheep 1
+pop temp 0
+push this 1
+push constant 1
+add
+pop this 1
+label IF_FALSE0
+push pointer 0
+call Sheep.drawSheep 1
+pop temp 0
+push constant 0
+return
+function Sheep.clearSheep 0
+push argument 0
+pop pointer 0
+push constant 16384
+push this 1
+add
+pop this 0
+push this 0
+push constant 0
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 32
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 64
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 96
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 128
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 160
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 192
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 224
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 256
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 288
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 320
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 352
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 384
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 416
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 448
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 480
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Sheep.drawSheep 0
+push argument 0
+pop pointer 0
+push constant 16384
+push this 1
+add
+pop this 0
+push this 0
+push constant 0
+add
+push constant 256
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 32
+add
+push constant 896
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 64
+add
+push constant 10184
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 96
+add
+push constant 16376
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 128
+add
+push constant 8200
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 160
+add
+push constant 11368
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 192
+add
+push constant 8202
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 224
+add
+push constant 10191
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 256
+add
+push constant 5207
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 288
+add
+push constant 6194
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 320
+add
+push constant 30687
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 352
+add
+push constant 1986
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 384
+add
+push constant 3170
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 416
+add
+push constant 3170
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 448
+add
+push constant 7282
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 480
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Sheep.drawBomb 0
+push argument 0
+pop pointer 0
+push constant 16384
+push this 1
+add
+push constant 1
+sub
+pop this 0
+push this 0
+push constant 0
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 32
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 64
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 96
+add
+push constant 128
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 128
+add
+push constant 320
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 160
+add
+push constant 672
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 192
+add
+push constant 1360
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 224
+add
+push constant 2728
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 256
+add
+push constant 5460
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 288
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 320
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 352
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 384
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 416
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 448
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 480
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Sheep.drawFence 0
+push argument 0
+pop pointer 0
+push constant 16384
+push this 1
+add
+push constant 1
+sub
+pop this 0
+push this 0
+push constant 0
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 32
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 64
+add
+push constant 1056
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 96
+add
+push constant 1056
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 128
+add
+push constant 1056
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 160
+add
+push constant 1056
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 192
+add
+push constant 16380
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 224
+add
+push constant 1056
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 256
+add
+push constant 1056
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 288
+add
+push constant 1056
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 320
+add
+push constant 1056
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 352
+add
+push constant 1056
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 384
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 416
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 448
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 480
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Sheep.drawWall 0
+push argument 0
+pop pointer 0
+push constant 16384
+push this 1
+add
+push constant 1
+sub
+pop this 0
+push this 0
+push constant 0
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 32
+add
+push constant 21845
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 64
+add
+push constant 10922
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 96
+add
+push constant 21845
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 128
+add
+push constant 10922
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 160
+add
+push constant 21845
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 192
+add
+push constant 10922
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 224
+add
+push constant 21845
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 256
+add
+push constant 10922
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 288
+add
+push constant 21845
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 320
+add
+push constant 10922
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 352
+add
+push constant 21845
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 384
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 416
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 448
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 0
+push constant 480
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push constant 0
+return

@@ -35,7 +35,7 @@ class Sheep
 	
 	method void moveDown()
 	{
-		if(~(location>24064))		
+		if(~(location>7680))		
 		{
 			do clearSheep();
 			let location = location+512;
@@ -59,7 +59,7 @@ class Sheep
 	
 	method void moveRight()
 	{
-		if(~(location>24754))
+		if(~(location>9370))
 		{
 			do clearSheep();
 			let location = location+1;

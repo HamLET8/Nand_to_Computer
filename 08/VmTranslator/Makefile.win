@@ -1,0 +1,34 @@
+# Project: VmTanslator
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -std=c++11 -D__DEBUG__
+CC       = gcc.exe -std=c++11 -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = CodeWriter.o Parser.o Vmtranslator.o
+LINKOBJ  = CodeWriter.o Parser.o Vmtranslator.o
+LIBS     = -L"D:/CPragram/Dev-Cpp/MinGW64/lib" -L"D:/CPragram/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"D:/CPragram/Dev-Cpp/MinGW64/include" -I"D:/CPragram/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/CPragram/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/CPragram/Dev-Cpp/MinGW64/include" -I"D:/CPragram/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/CPragram/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/CPragram/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = VmTanslator.exe
+CXXFLAGS = $(CXXINCS) -g3 -fpermissive
+CFLAGS   = $(INCS) -g3 -fpermissive
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+CodeWriter.o: CodeWriter.cpp
+	$(CPP) -c CodeWriter.cpp -o CodeWriter.o $(CXXFLAGS)
+
+Parser.o: Parser.cpp
+	$(CPP) -c Parser.cpp -o Parser.o $(CXXFLAGS)
+
+Vmtranslator.o: Vmtranslator.cpp
+	$(CPP) -c Vmtranslator.cpp -o Vmtranslator.o $(CXXFLAGS)

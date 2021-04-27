@@ -39,7 +39,7 @@ void CodeWriter::setFileName(const string& crrNameF)
 
 void CodeWriter::writeInit()		
 {
-	outPutF << "@261\nD=A\n@SP\nM=D\n@ARG\nM=0\n@LCL\nM=0\n@THIS\nM=0\n@THAT\nM=0\n@Sys.init\n0;JMP" << endl;		//sp = 261 lCL = ARG = THAT =THIS = 0
+	outPutF << "@256\nD=A\n@SP\nM=D\n@ARG\nM=0\n@LCL\nM=0\n@THIS\nM=0\n@THAT\nM=0\n@Sys.init\n0;JMP" << endl;		//sp = 261 lCL = ARG = THAT =THIS = 0
 }
 	
 void CodeWriter::writeLabel(const string& label)				//(label)
